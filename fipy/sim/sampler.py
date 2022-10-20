@@ -57,6 +57,7 @@ class DevicePoolSampler(ABC):
         for _ in range(samples_n):
             xs = [self.make_device_entity(nid)
                   for nid in range(1, self._device_n + 1)]
+            print(xs)
             self._orion.upsert_entities(xs)
-
+            print("updated")
             time.sleep(sampling_rate)
